@@ -36,7 +36,7 @@ Kubernetes The Hard Way guides you through bootstrapping a highly available Kube
 This tutorial assumes you have access to [Hetzer Cloud](https://www.hetzner.com/cloud). If you are looking for the GCP version of this guide then look at : [https://github.com/kelseyhightower/kubernetes-the-hard-way](https://github.com/kelseyhightower/kubernetes-the-hard-way).
 
 * [Prerequisites](docs/01-prerequisites.md) - TODO
-* [Installing the Client Tools](docs/02-client-tools.md) - TODO
+* [Installing the Client Tools](docs/02-client-tools.md)
 * [Provisioning Compute Resources](docs/03-compute-resources.md) - TODO
 * [Provisioning the CA and Generating TLS Certificates](docs/04-certificate-authority.md) - TODO
 * [Generating Kubernetes Configuration Files for Authentication](docs/05-kubernetes-configuration-files.md) - TODO
