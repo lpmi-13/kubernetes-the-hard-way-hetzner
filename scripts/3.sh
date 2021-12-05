@@ -18,11 +18,6 @@ hcloud load-balancer attach-to-network \
   --network kubernetes \
   kubernetes-lb
 
-KUBERNETES_PUBLIC_ADDRESS=$(hcloud load-balancer describe \
-  kubernetes-lb -o json | jq -r '.public_net.ipv4.ip')
-
-echo "KUBERNETES_PUBLIC_ADDRESS is $KUBERNETES_PUBLIC_ADDRESS"
-
 ssh-keygen -t ed25519 -o -a 100 -f kubernetes.ed25519 -N ""
 
 hcloud ssh-key create \

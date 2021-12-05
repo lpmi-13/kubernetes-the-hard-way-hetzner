@@ -42,14 +42,6 @@ hcloud load-balancer attach-to-network \
   kubernetes-lb
 ```
 
-Let's go ahead and grab the public IP of our load balancer.
-
-```sh
-KUBERNETES_PUBLIC_ADDRESS=$(hcloud load-balancer describe \
-  kubernetes-lb -o json \
-  | jq -r '.public_net.ipv4.ip')
-```
-
 ## Compute Instances
 
 ### SSH Key
