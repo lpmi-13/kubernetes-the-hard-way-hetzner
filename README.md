@@ -39,7 +39,7 @@ This tutorial assumes you have access to [Hetzer Cloud](https://www.hetzner.com/
 * [Installing the Client Tools](docs/02-client-tools.md)
 * [Provisioning Compute Resources](docs/03-compute-resources.md)
 * [Provisioning the CA and Generating TLS Certificates](docs/04-certificate-authority.md)
-* [Generating Kubernetes Configuration Files for Authentication](docs/05-kubernetes-configuration-files.md) - TODO
+* [Generating Kubernetes Configuration Files for Authentication](docs/05-kubernetes-configuration-files.md)
 * [Generating the Data Encryption Config and Key](docs/06-data-encryption-keys.md) - TODO
 * [Bootstrapping the etcd Cluster](docs/07-bootstrapping-etcd.md) - TODO
 * [Bootstrapping the Kubernetes Control Plane](docs/08-bootstrapping-kubernetes-controllers.md) - TODO
