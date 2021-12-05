@@ -1,4 +1,9 @@
 .env
 *.pem
+*.kubeconfig
 *.json
+*.yaml
+*.csr
+!/deployments/*
 *ed25519*
+update_dns.sh
