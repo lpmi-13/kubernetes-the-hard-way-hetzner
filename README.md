@@ -37,7 +37,7 @@ This tutorial assumes you have access to [Hetzer Cloud](https://www.hetzner.com/
 
 * [Prerequisites](docs/01-prerequisites.md) - TODO
 * [Installing the Client Tools](docs/02-client-tools.md)
-* [Provisioning Compute Resources](docs/03-compute-resources.md) - TODO
+* [Provisioning Compute Resources](docs/03-compute-resources.md)
 * [Provisioning the CA and Generating TLS Certificates](docs/04-certificate-authority.md) - TODO
 * [Generating Kubernetes Configuration Files for Authentication](docs/05-kubernetes-configuration-files.md) - TODO
 * [Generating the Data Encryption Config and Key](docs/06-data-encryption-keys.md) - TODO
