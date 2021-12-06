@@ -78,3 +78,8 @@ done
 for i in 0 1; do
   hcloud firewall apply-to-resource kubernetes-firewall-workers --type server --server worker-${i}
 done
+
+hcloud load-balancer add-service kubernetes-lb \
+  --listen-port 443 \
+  --destination-port 6443 \
+  --protocol tcp

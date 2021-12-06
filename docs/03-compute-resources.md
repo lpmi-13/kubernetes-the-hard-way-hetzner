@@ -141,4 +141,13 @@ for i in 0 1; do
 done
 ```
 
+And for the last step, let's update the load balancer to forward tcp connections directly to the controllers.
+
+```sh
+hcloud load-balancer add-server kubernetes-lb \
+  --listen-port 443 \
+  --destination-port 6443 \
+  --protocol tcp
+```
+
 Next: [Certificate Authority](04-certificate-authority.md)
