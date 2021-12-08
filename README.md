@@ -45,7 +45,7 @@ This tutorial assumes you have access to [Hetzer Cloud](https://www.hetzner.com/
 * [Bootstrapping the Kubernetes Control Plane](docs/08-bootstrapping-kubernetes-controllers.md)
 * [Bootstrapping the Kubernetes Worker Nodes](docs/09-bootstrapping-kubernetes-workers.md)
 * [Configuring kubectl for Remote Access](docs/10-configuring-kubectl.md)
-* [Provisioning Pod Network Routes](docs/11-pod-network-routes.md) - TODO
+* [Provisioning Pod Network Routes](docs/11-pod-network-routes.md)
 * [Deploying the DNS Cluster Add-on](docs/12-dns-addon.md) - TODO
 * [Smoke Test](docs/13-smoke-test.md) - TODO
 * [Cleaning Up](docs/14-cleanup.md) - TODO
