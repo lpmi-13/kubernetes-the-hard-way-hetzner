@@ -2,7 +2,7 @@
 
 Before you start this guide, be advised that when your account is new, there's a default limit of 5 VMs, and that won't be enough to complete this tutorial in the normal configuration (ie, 3 controllers and 3 workers).
 
-I've currently got a support ticket open to request an increase to 6 VMs, but for now, I'll try to complete the walkthrough with only 2 worker nodes.
+While it _is_ possible to open a support ticket to increase the limit of servers to more than 5, that's not possible until your account is at least 30 days old, so in this walkthrough, we're only going to use 2 workers instead of 3.
 
 ## Networking
 
@@ -10,7 +10,7 @@ I've currently got a support ticket open to request an increase to 6 VMs, but fo
 
 Hetzer doesn't call these VPC's, but their "network" is essentially the same thing.
 
-(*NOTE:* it's unfortunate that for a lot of these commands, there is no option for output on create, so we need to add some extra steps to grab the IDs of things)
+(*NOTE:* it's unfortunate that for a lot of these commands, there is no option for output on create, but the hcloud cli makes it very easy to refer to things by name instead of ID, so it's not a big deal)
 
 ```sh
 hcloud network create \
@@ -35,7 +35,7 @@ First, we create the load balancer, and then we can attach it to the network.
 hcloud load-balancer create \
   --name kubernetes-lb \
   --type lb11 \
-  --network-zone eu-central \ # this is the same zone as the Nuremberg data center, which is the same as where we created the network
+  --network-zone eu-central \ # this is the same zone as the Nuremberg data center, which is where we created the network
 
 hcloud load-balancer attach-to-network \
   --network kubernetes \
@@ -65,7 +65,7 @@ Using `cx11` instances, slightly smaller than the t3.micro instances used in the
 for i in 0 1 2; do
   hcloud server create \
     --name controller-${i} \
-    --image ubuntu-20.04 \
+    --image ubuntu-18.04 \
     --type cx11 \
     --datacenter nbg1-dc3 # this is the Nuremberg data center
     --ssh-key kubernetes-ssh \
@@ -79,7 +79,7 @@ done
 for i in 0 1; do
   hcloud server create \
     --name worker-${i} \
-    --image ubuntu-20.04 \
+    --image ubuntu-18.04 \
     --type cx11 \
     --datacenter nbg1-dc3 # this is the Nuremberg data center
     --ssh-key kubernetes-ssh \

@@ -26,7 +26,7 @@ hcloud ssh-key create \
 for i in 0 1 2; do
   hcloud server create \
     --name controller-${i} \
-    --image ubuntu-20.04 \
+    --image ubuntu-18.04 \
     --type cx11 \
     --datacenter nbg1-dc3 \
     --ssh-key kubernetes-ssh \
@@ -37,7 +37,7 @@ done
 for i in 0 1; do
   hcloud server create \
     --name worker-${i} \
-    --image ubuntu-20.04 \
+    --image ubuntu-18.04 \
     --type cx11 \
     --datacenter nbg1-dc3 \
     --ssh-key kubernetes-ssh \
