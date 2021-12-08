@@ -22,21 +22,6 @@ Verify the hcloud CLI version using:
 hcloud version
 ```
 
-### Set a Default Compute Region and Zone
-
-(probably don't need this)
-
-This tutorial assumes a default compute region.
-
-Go ahead and set a default compute region:
-
-- for a list of Digital Ocean regions, check [here](https://www.digitalocean.com/docs/platform/availability-matrix/), though *NOTE* that for cli usage, all the regions need to be LOWERCASE
-
-```
-DO_REGION=lon1
-
-```
-
 ### configure the CLI tool to interact with your account
 
 There isn't much documentation on generating an API token, but you'll need to set up a project first in the [cloud console](https://console.hetzner.cloud/projects). After doing that, you can export it (easier with cli commands) via `HCLOUD_TOKEN=PUT_THE_TOKEN_HERE`.
