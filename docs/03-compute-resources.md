@@ -15,7 +15,7 @@ Hetzer doesn't call these VPC's, but their "network" is essentially the same thi
 ```sh
 hcloud network create \
   --ip-range 10.240.0.0/16 \
-  --name kubernetes \
+  --name kubernetes
 ```
 
 similar to AWS, you can only put resources in subnets, which is very sensible, so we also need to create one of those.
@@ -35,7 +35,7 @@ First, we create the load balancer, and then we can attach it to the network.
 hcloud load-balancer create \
   --name kubernetes-lb \
   --type lb11 \
-  --network-zone eu-central \ # this is the same zone as the Nuremberg data center, which is where we created the network
+  --network-zone eu-central # this is the same zone as the Nuremberg data center, which is where we created the network
 
 hcloud load-balancer attach-to-network \
   --network kubernetes \
