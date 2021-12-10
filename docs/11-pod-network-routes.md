@@ -11,27 +11,17 @@ Essentially, we want a pod in each worker node to be able to find a pod in anoth
 - we want to add a route like the following:
 
 ```sh
-$ ip route add 10.200.1.0/24 via 10.240.0.7
+$ ip route add 10.200.1.0/24 via 10.240.0.1 dev ens10
 ```
-(10.200.1.0/24 is the possible range for a pod on worker-1, and 10.240.0.7 is the internal IP address for worker-1)
+(10.200.1.0/24 is the possible range for a pod on worker-1, and 10.240.0.1 is the gateway that knows where to forward requests for this route to, and the ens10 device is what hetzner uses as the interface for the private subnet)
 
 > There are [other ways](https://kubernetes.io/docs/concepts/cluster-administration/networking/#how-to-achieve-this) to implement the Kubernetes networking model.
-
-## The Routing Table and routes on the workers
-
-> It's possible that just setting routes is enough, so lets try that first and if it doesn't work, we'll manually configure stuff on the workers.
-
-Since Vultr (similar to Digitalocean) doesn't have a nice network routing abstraction from the CLI like AWS/GCP, we have to do this a bit manually, but it has the same effect.
 
 # public IP addresses for running commands via ssh
 
 ```
-worker_0_public_ip=$(vultr-cli instance list | grep worker-0 \
-   | awk -F ' ' '{print $2}')
-worker_1_public_ip=$(vultr-cli instance list | grep worker-1 \
-   | awk -F ' ' '{print $2}')
-worker_2_public_ip=$(vultr-cli instance list | grep worker-2 \
-   | awk -F ' ' '{print $2}')
+worker_0_public_ip=$(hcloud server ip worker-0)
+worker_1_public_ip=$(hcloud server ip worker-1)
 ```
 
 run the following commands for each of the worker nodes:
@@ -41,7 +31,7 @@ run the following commands for each of the worker nodes:
 ```sh
 ssh -i kubernetes.ed25519 \
   -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null \
-  root@$worker_0_public_ip -C "ip route add 10.200.1.0/24 via 10.240.0.7;ip route add 10.200.2.0/24 via 10.240.0.8"
+  root@$worker_0_public_ip -C "ip route add 10.200.1.0/24 via 10.240.0.1 dev ens10"
 ```
 
 - worker-1
@@ -49,15 +39,7 @@ ssh -i kubernetes.ed25519 \
 ```sh
 ssh -i kubernetes.ed25519 \
   -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null \
-  root@$worker_1_public_ip -C "ip route add 10.200.0.0/24 via 10.240.0.6;ip route add 10.200.2.0/24 via 10.240.0.8"
-```
-
-- worker-2
-
-```sh
-ssh -i kubernetes.ed25519 \
-  -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null \
-  root@$worker_2_public_ip -C "ip route add 10.200.0.0/24 via 10.240.0.6;ip route add 10.200.1.0/24 via 10.240.0.7"
+  root@$worker_1_public_ip -C "ip route add 10.200.0.0/24 via 10.240.0.1 dev ens10"
 ```
 
 Next: [Deploying the DNS Cluster Add-on](12-dns-addon.md)

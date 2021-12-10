@@ -26,8 +26,8 @@ ssh -i kubernetes.ed25519 \
 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null \
 root@$external_ip < ./scripts/set_up_rbac.sh
 
-echo sleeping for three minutes to allow the backend to be ready to receive SSL connections...
-sleep 180
+echo sleeping for one minute to allow the backend to be ready to receive SSL connections...
+sleep 60
 
 KUBERNETES_PUBLIC_ADDRESS=$(hcloud load-balancer describe kubernetes-lb -o json | jq -r '.public_net.ipv4.ip')
 
