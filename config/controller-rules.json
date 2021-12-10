@@ -1,0 +1,46 @@
+[
+    {
+      "description": "Allow inbound pings",
+      "direction": "in",
+      "protocol": "icmp",
+      "source_ips": [
+        "0.0.0.0/0"
+      ]
+    },
+    {
+      "description": "Allow inbound ssh",
+      "direction": "in",
+      "port": "22",
+      "protocol": "tcp",
+      "source_ips": [
+        "0.0.0.0/0"
+      ]
+    },
+    {
+      "description": "Allow inbound kubectl connections",
+      "direction": "in",
+      "port": "6443",
+      "protocol": "tcp",
+      "source_ips": [
+        "0.0.0.0/0"
+      ]
+    },
+    {
+      "description": "Allow inter-node traffic on tcp",
+      "direction": "in",
+      "port": "1-65535",
+      "protocol": "tcp",
+      "source_ips": [
+        "10.240.0.0/24"
+      ]
+    },
+    {
+      "description": "Allow inter-node traffic on udp",
+      "direction": "in",
+      "port": "1-65535",
+      "protocol": "udp",
+      "source_ips": [
+        "10.240.0.0/24"
+      ]
+    }
+]

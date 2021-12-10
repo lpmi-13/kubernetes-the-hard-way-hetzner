@@ -1,0 +1,47 @@
+[
+    {
+      "description": "Allow SSH in for configuration",
+      "direction": "in",
+      "port": "22",
+      "protocol": "tcp",
+      "source_ips": [
+        "0.0.0.0/0"
+      ]
+    },
+    {
+      "description": "Allow inter-node traffic on tcp",
+      "direction": "in",
+      "port": "1-65535",
+      "protocol": "tcp",
+      "source_ips": [
+        "10.240.0.0/24"
+      ]
+    },
+    {
+      "description": "Allow inter-node traffic on udp",
+      "direction": "in",
+      "port": "1-65535",
+      "protocol": "udp",
+      "source_ips": [
+        "10.240.0.0/24"
+      ]
+    },
+    {
+      "description": "Allow inter-pod traffic on tcp",
+      "direction": "in",
+      "port": "1-65535",
+      "protocol": "tcp",
+      "source_ips": [
+        "10.200.0.0/24"
+      ]
+    },
+    {
+      "description": "Allow inter-pod traffic on udp",
+      "direction": "in",
+      "port": "1-65535",
+      "protocol": "udp",
+      "source_ips": [
+        "10.200.0.0/24"
+      ]
+    }
+]

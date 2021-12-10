@@ -4,6 +4,7 @@
 *.json
 *.yaml
 *.csr
+!/config/*
 !/deployments/*
 *ed25519*
 update_dns.sh
