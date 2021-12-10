@@ -35,7 +35,7 @@ Kubernetes The Hard Way guides you through bootstrapping a highly available Kube
 
 This tutorial assumes you have access to [Hetzer Cloud](https://www.hetzner.com/cloud). If you are looking for the GCP version of this guide then look at : [https://github.com/kelseyhightower/kubernetes-the-hard-way](https://github.com/kelseyhightower/kubernetes-the-hard-way).
 
-* [Prerequisites](docs/01-prerequisites.md) - TODO
+* [Prerequisites](docs/01-prerequisites.md)
 * [Installing the Client Tools](docs/02-client-tools.md)
 * [Provisioning Compute Resources](docs/03-compute-resources.md)
 * [Provisioning the CA and Generating TLS Certificates](docs/04-certificate-authority.md)
@@ -46,9 +46,9 @@ This tutorial assumes you have access to [Hetzer Cloud](https://www.hetzner.com/
 * [Bootstrapping the Kubernetes Worker Nodes](docs/09-bootstrapping-kubernetes-workers.md)
 * [Configuring kubectl for Remote Access](docs/10-configuring-kubectl.md)
 * [Provisioning Pod Network Routes](docs/11-pod-network-routes.md)
-* [Deploying the DNS Cluster Add-on](docs/12-dns-addon.md) - TODO
-* [Smoke Test](docs/13-smoke-test.md) - TODO
-* [Cleaning Up](docs/14-cleanup.md) - TODO
+* [Deploying the DNS Cluster Add-on](docs/12-dns-addon.md)
+* [Smoke Test](docs/13-smoke-test.md)
+* [Cleaning Up](docs/14-cleanup.md)
 
 ## Scripted setup
 
