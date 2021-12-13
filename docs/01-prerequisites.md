@@ -7,7 +7,7 @@ This tutorial leverages [Hetzner Cloud](https://www.hetzner.com/cloud) to stream
 > There is no free tier for Hetzner Clud. Make sure that you clean up the resource at the end of the activity to avoid incurring unwanted costs. 
 
 **IMPORTANT**
-You may need to pay 20 EUR upfront to be allowed to create the account, and this makes this cloud option slightly less attractive than the other ones, which feature pay-as-you-go options (eg, vultr, linode, digitalocean), so keep that in mind before you begin!
+You may need to pay 20 EUR upfront to be allowed to create the account, which involves a bit more overhead than the providers that feature pay-as-you-go options (eg, vultr, linode, digitalocean), but it's very easy to open a support ticket for a refund at the completion of the walkthrough, so don't worry about needing to spend the entire amount (it will require much less than that).
 
 ## Hetzner Cloud CLI
 
